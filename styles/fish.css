@@ -1,0 +1,21 @@
+.fishCard {
+  border: 2px dotted black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 48%;
+}
+
+.fishCard__img {
+  width: 25%;
+}
+
+.fishCard__name {
+  font-weight: bold;
+}
+
+.containerLeft__fishList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

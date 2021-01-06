@@ -1,0 +1,23 @@
+@import "./header.css";
+@import "./footer.css";
+@import "./fish.css";
+@import "./quotes.css";
+@import "./locations.css";
+@import "./tips.css";
+
+.contentArticle {
+  background-color:seagreen;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerLeft {
+  flex-basis: 75%;
+}
+
+.containerRight {
+  flex-basis: 25%;
+}
