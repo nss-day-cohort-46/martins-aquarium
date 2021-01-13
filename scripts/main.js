@@ -1,11 +1,5 @@
 console.log("Hello and welcome to Martin's Aquarium")
 
-import { useFish } from './FishDataProvider.js'
+import { FishList } from './FishList.js'
 
-const allTheFish = useFish()
-
-console.log("array of fish objects", allTheFish)
-
-for (const fish of allTheFish) {
-  console.log(fish)
-}
+FishList()
