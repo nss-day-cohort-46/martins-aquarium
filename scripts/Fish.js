@@ -2,6 +2,7 @@
  *  Fish which renders individual fish objects as HTML
  */
 export const Fish = (burrito) => {
+  // debugger
   return `
       <div class="fishCard">
       <p class="fishCard__name">${burrito.name}</p>

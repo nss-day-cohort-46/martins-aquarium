@@ -7,20 +7,21 @@ import { Fish } from "./Fish.js"
 import { useFish } from "./FishDataProvider.js"
 
 export const FishList = () => {
-
+  // debugger
   // Get a reference to the `<article class="content">` element
   const contentElement = document.querySelector(".containerLeft")
   const fishArray = useFish()
-  console.log("FishList: fishes", fishArray)
+  // console.log("FishList: fishes", fishArray)
 
   let fishHTMLRepresentation = ""
   for (const fishObj of fishArray) {
     /*
-        Invoke the Fish component function
-        and pass the current fish object as an argument.
-        Each time, add the return value to the
-        fishHTMLRepresentations variable with `+=`
+    Invoke the Fish component function
+    and pass the current fish object as an argument.
+    Each time, add the return value to the
+    fishHTMLRepresentations variable with `+=`
     */
+    // debugger
     fishHTMLRepresentation += Fish(fishObj)
     console.log(fishHTMLRepresentation)
   }
