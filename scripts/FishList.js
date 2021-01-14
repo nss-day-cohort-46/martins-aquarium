@@ -11,7 +11,7 @@ export const FishList = () => {
   // Get a reference to the `<article class="content">` element
   const contentElement = document.querySelector(".containerLeft")
   const fishArray = useFish()
-  console.log("FishList: fishes", fishes)
+  console.log("FishList: fishes", fishArray)
 
   let fishHTMLRepresentation = ""
   for (const fishObj of fishArray) {
