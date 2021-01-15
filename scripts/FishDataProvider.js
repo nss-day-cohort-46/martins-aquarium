@@ -10,7 +10,7 @@ const fishCollection = [
     diet: "seafood",
     species: "Amphiprioninae",
     location: "Great Barrier Reef, Australia",
-    length: "couple inches",
+    length: 3,
     image: "https://pixy.org/src/428/4287617.jpeg"
   },
   {
@@ -18,7 +18,7 @@ const fishCollection = [
     diet: "seafood",
     species: "Amphiprioninae",
     location: "Great Barrier Reef, Australia",
-    length: "couple inches + 2",
+    length: 15,
     image: "https://www.aquariumofpacific.org/images/made_new/images-uploads-clownfish_600_q85.jpg"
   },
   {
@@ -26,7 +26,7 @@ const fishCollection = [
     diet: "seafood",
     species: "Amphiprioninae",
     location: "Great Barrier Reef, Australia",
-    length: "couple inches",
+    length: 7,
     image: "https://miro.medium.com/max/10216/1*Tp9sUfKtPSZX6EPgkdFi2Q.jpeg"
   },
   {
@@ -34,11 +34,53 @@ const fishCollection = [
     diet: "seafood",
     species: "Amphiprioninae",
     location: "Great Barrier Reef, Australia",
-    length: "couple inches",
+    length: 21,
     image: "https://www.popsci.com/resizer/_qfajg4kdsuGsvZ8URjo3iW0Nxg=/1200x628/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/4DTKWWI33BGEXA3JNUCPECXGOA.jpg"
   }
 ]
 
 export const useFish = () => {
   return fishCollection.slice()
+}
+
+export const mostHolyFish = () => {
+  // 3, 6, 9, 12, etc... fish
+  const holyFish = []
+
+  for (const fishObject of fishCollection) {
+    if (fishObject.length % 3 === 0) {
+      holyFish.push(fishObject)
+    }
+  }
+  // console.log("array of holy fish", holyFish)
+  
+  return holyFish
+}
+
+export const soldierFish = () => {
+  // 5, 10, 15, 20, 25, etc... fish
+
+  const soldiers = []
+
+  for (const fishObject of fishCollection) {
+    if (fishObject.length % 5 === 0) {
+      soldiers.push(fishObject)
+    }
+  }
+  // console.log("array of soldier fish", soldiers)
+
+  return soldiers
+}
+
+export const nonHolyFish = () => {
+  // Any fish not a multiple of 3 or 5
+  const regularFish = []
+
+  for (const fishObject of fishCollection) {
+    if (fishObject.length % 5 !== 0 && fishObject.length % 3 !== 0) {
+      regularFish.push(fishObject)
+    }
+  }
+  // console.log("array of regular fish", regularFish)
+  return regularFish
 }

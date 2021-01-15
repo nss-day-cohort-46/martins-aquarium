@@ -4,33 +4,52 @@
 
 // TODO: Import `useFish` from the data provider module
 import { Fish } from "./Fish.js"
-import { useFish } from "./FishDataProvider.js"
+import { mostHolyFish, soldierFish, nonHolyFish } from "./FishDataProvider.js"
 
 export const FishList = () => {
   // debugger
   // Get a reference to the `<article class="content">` element
   const contentElement = document.querySelector(".containerLeft")
-  const fishArray = useFish()
-  // console.log("FishList: fishes", fishArray)
+  
+  const holyFishArray = mostHolyFish()
+  // console.log("holyFish", holyFishArray)
 
-  let fishHTMLRepresentation = ""
-  for (const fishObj of fishArray) {
-    /*
-    Invoke the Fish component function
-    and pass the current fish object as an argument.
-    Each time, add the return value to the
-    fishHTMLRepresentations variable with `+=`
-    */
-    // debugger
-    fishHTMLRepresentation += Fish(fishObj)
-    console.log(fishHTMLRepresentation)
+  const soldierFishArray = soldierFish()
+  // console.log("soldierFish", soldierFishArray)
+
+  const regularFishArray = nonHolyFish()
+  // console.log("soldierFish", regularFishArray)
+
+  let holyFishHTMLRepresentation = "<h3>Holy Fish</h3>"
+  for (const fishObj of holyFishArray) {
+
+    holyFishHTMLRepresentation += Fish(fishObj)
+    console.log(holyFishHTMLRepresentation)
   }
+
+  let soldierFishHTMLRepresentation = "<h3>Solider Fish</h3>"
+  for (const fishObj of soldierFishArray) {
+
+    soldierFishHTMLRepresentation += Fish(fishObj)
+    console.log(soldierFishHTMLRepresentation)
+  }
+
+  let regularFishHTMLRepresentation = "<h3>Regular Fish</h3>"
+  for (const fishObj of soldierFishArray) {
+
+    regularFishHTMLRepresentation += Fish(fishObj)
+    console.log(regularFishHTMLRepresentation)
+  }
+
+
 
 
   // Add to the existing HTML in the content element
   contentElement.innerHTML += `
       <article class="containerLeft__fishList contentArticle">
-          ${fishHTMLRepresentation}
+          ${holyFishHTMLRepresentation}
+          ${soldierFishHTMLRepresentation}
+          ${regularFishHTMLRepresentation}
       </article>
   `
 }
